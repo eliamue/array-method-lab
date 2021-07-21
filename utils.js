@@ -19,3 +19,4 @@ export const filterArray = (arr, callback) => {
   }
   return newArr;  
 };
+

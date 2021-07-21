@@ -13,10 +13,22 @@ describe('map array method', () => {
 });
 
 describe('filter array method', () => {
-  it('filters array with callback to ', async () => {
+  it('filters into a new array with only numbers less than 7', async () => {
     const callback = item => item < 7;
     const array = [1, 3, 5, 7];
     const expected = [1, 3, 5];
+    const actual = filterArray(array, callback);
+
+    expect(expected).toEqual(actual);
+  });
+
+});
+
+describe('findIndex method', () => {
+  it('array with callback to find the index of the first item that starts with the letter Z', async () => {
+    const callback = item => item.startsWith('Z');
+    const array = ['Teen', 'Melhissandre', 'Zoey', 'Scout', 'Zuul'];
+    const expected = [2];
     const actual = filterArray(array, callback);
 
     expect(expected).toEqual(actual);
