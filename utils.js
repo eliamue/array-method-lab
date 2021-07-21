@@ -1,4 +1,5 @@
-const mapArray = (arr, callback) => {
+
+export const mapArray = (arr, callback) => {
   const newArr = [];
   for(let i = 0; i < arr.length; i++) {
     const item = arr[i];
@@ -7,5 +8,5 @@ const mapArray = (arr, callback) => {
   }
   return newArr;  
 };
-  
-export default mapArray;
+
+
