@@ -20,3 +20,14 @@ export const filterArray = (arr, callback) => {
   return newArr;  
 };
 
+export const findIndex = (arr, callback) => {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+    if(callback(item[i])) {
+      newArr = item[i].value;
+    }
+    
+  }
+  return newArr;  
+};
