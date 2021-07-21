@@ -9,4 +9,5 @@ describe('map array method', () => {
 
     expect(expected).toEqual(actual);
   });
+
 });
