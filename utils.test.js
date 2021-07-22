@@ -1,4 +1,4 @@
-import { mapArray, filterArray, findIndex } from './utils';
+import { mapArray, filterArray, findIndex, everyArray } from './utils';
 
 describe('map array method', () => {
   it('maps array with callback to multiply each number in the array by 2', async () => {
@@ -25,9 +25,9 @@ describe('filter array method', () => {
 });
 
 describe('findIndex method', () => {
-  it('array with callback to find the index of the first item that starts with the letter Z', async () => {
-    const callback = item => item.startsWith('Z');
-    const array = ['Teen', 'Melhissandre', 'Zoey'];
+  it('array with callback to find the index of the first item that is even', async () => {
+    const callback = item => (item % 2 === 0);
+    const array = [1, 3, 6, 13, 15];
     const expected = [2];
     const actual = findIndex(array, callback);
 
@@ -36,14 +36,23 @@ describe('findIndex method', () => {
 
 });
 
-// describe('findIndex method', () => {
-//   it('reduce', async () => {
-//     const callback = item => item.startsWith('Z');
-//     const array = callback(['Teen', 'Melhissandre', 'Zoey', 'Scout', 'Zuul']);
-//     const expected = [2];
-//     const actual = reduceArray(array);
+describe('every method', () => {
+  it('returns false if any item is not even', async () => {
+    const callback = item => (item % 2 === 0);
+    const array = [1, 3, 6, 12, 15];
+    const expected = false;
+    const actual = everyArray(array, callback);
 
-//     expect(expected).toEqual(actual);
-//   });
+    expect(expected).toEqual(actual);
+  });
+  
+  it('returns true if every item is even', async () => {
+    const callback = item => (item % 2 === 0);
+    const array = [2, 4, 6, 12, 16];
+    const expected = true;
+    const actual = everyArray(array, callback);
 
-// });
+    expect(expected).toEqual(actual);
+  });
+
+});

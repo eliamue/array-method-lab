@@ -33,15 +33,15 @@ export const findIndex = (arr, callback) => {
 };
 
 
-// export const reduceArray = (arr, callback, initialValue) => {
-//   let newArr = initialValue === undefined ? 0 : initialValue;
-  
-//   for(let i = 0; i < arr.length; i++) {
-//     const item = arr[i];
-//     if (item) {
-//       newArr = callback(newArr, item);
-//     }
-    
-//   }
-//   return newArr;  
-// };
+export const everyArray = (arr, callback) => {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    const item = callback(arr[i]);
+    if(item) {
+      newArr = [...newArr, arr[i]];
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
