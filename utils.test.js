@@ -1,4 +1,4 @@
-import { mapArray, filterArray, findIndex, everyArray } from './utils';
+import { mapArray, filterArray, findIndex, everyArray, reduceArray } from './utils';
 
 describe('map array method', () => {
   it('maps array with callback to multiply each number in the array by 2', async () => {
@@ -33,7 +33,6 @@ describe('findIndex method', () => {
 
     expect(expected).toEqual(actual);
   });
-
 });
 
 describe('every method', () => {
@@ -45,7 +44,7 @@ describe('every method', () => {
 
     expect(expected).toEqual(actual);
   });
-  
+
   it('returns true if every item is even', async () => {
     const callback = item => (item % 2 === 0);
     const array = [2, 4, 6, 12, 16];
@@ -54,5 +53,15 @@ describe('every method', () => {
 
     expect(expected).toEqual(actual);
   });
+});
 
+describe('reduce method', () => {
+  it('reduce stuff idk', async () => {
+    const callback = (newArr, item) => newArr + item;
+    const array = [1, 3, 6, 7, 9];
+    const expected = 26;
+    const actual = reduceArray(array, callback);
+
+    expect(expected).toEqual(actual);
+  });
 });

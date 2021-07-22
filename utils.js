@@ -4,7 +4,6 @@ export const mapArray = (arr, callback) => {
   for(let i = 0; i < arr.length; i++) {
     const item = arr[i];
     newArr[i] = callback(item);
-
   }
   return newArr;  
 };
@@ -29,9 +28,7 @@ export const findIndex = (arr, callback) => {
     }
   }
   return newArr;  
-  
 };
-
 
 export const everyArray = (arr, callback) => {
   let newArr = [];
