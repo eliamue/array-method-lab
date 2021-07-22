@@ -23,11 +23,25 @@ export const filterArray = (arr, callback) => {
 export const findIndex = (arr, callback) => {
   let newArr = [];
   for(let i = 0; i < arr.length; i++) {
-    const item = arr[i];
-    if(callback(item[i])) {
-      newArr = item[i].value;
+    const item = callback(arr[i]);
+    if(item) {
+      newArr = [...newArr, i];
     }
-    
   }
   return newArr;  
+  
 };
+
+
+// export const reduceArray = (arr, callback, initialValue) => {
+//   let newArr = initialValue === undefined ? 0 : initialValue;
+  
+//   for(let i = 0; i < arr.length; i++) {
+//     const item = arr[i];
+//     if (item) {
+//       newArr = callback(newArr, item);
+//     }
+    
+//   }
+//   return newArr;  
+// };

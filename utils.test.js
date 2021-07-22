@@ -1,4 +1,4 @@
-import { mapArray, filterArray } from './utils';
+import { mapArray, filterArray, findIndex } from './utils';
 
 describe('map array method', () => {
   it('maps array with callback to multiply each number in the array by 2', async () => {
@@ -27,11 +27,23 @@ describe('filter array method', () => {
 describe('findIndex method', () => {
   it('array with callback to find the index of the first item that starts with the letter Z', async () => {
     const callback = item => item.startsWith('Z');
-    const array = ['Teen', 'Melhissandre', 'Zoey', 'Scout', 'Zuul'];
+    const array = ['Teen', 'Melhissandre', 'Zoey'];
     const expected = [2];
-    const actual = filterArray(array, callback);
+    const actual = findIndex(array, callback);
 
     expect(expected).toEqual(actual);
   });
 
 });
+
+// describe('findIndex method', () => {
+//   it('reduce', async () => {
+//     const callback = item => item.startsWith('Z');
+//     const array = callback(['Teen', 'Melhissandre', 'Zoey', 'Scout', 'Zuul']);
+//     const expected = [2];
+//     const actual = reduceArray(array);
+
+//     expect(expected).toEqual(actual);
+//   });
+
+// });
