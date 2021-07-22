@@ -42,3 +42,14 @@ export const everyArray = (arr, callback) => {
     }
   }
 };
+
+export const reduceArray = (arr, callback) => {
+  let newArr = 0;
+  for(let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+    if(item) {
+      newArr = callback(newArr, item);
+    }
+  }
+  return newArr;
+};
