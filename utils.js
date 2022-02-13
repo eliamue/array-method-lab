@@ -53,3 +53,7 @@ export const reduceArray = (arr, callback) => {
   }
   return newArr;
 };
+
+export const expo = (a, b) => {
+  return Math.pow(a, b);
+};

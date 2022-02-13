@@ -1,4 +1,4 @@
-import { mapArray, filterArray, findIndex, everyArray, reduceArray } from './utils';
+import { mapArray, filterArray, findIndex, everyArray, reduceArray, expo } from './utils';
 
 describe('map array method', () => {
   it('maps array with callback to multiply each number in the array by 2', async () => {
@@ -6,6 +6,18 @@ describe('map array method', () => {
     const array = [1, 3, 5, 7];
     const expected = [2, 6, 10, 14];
     const actual = mapArray(array, callback);
+
+    expect(expected).toEqual(actual);
+  });
+
+});
+
+describe('exponential method', () => {
+  it('exponential', async () => {
+    const a = 3;
+    const b = 4;
+    const expected = expo(a, b);
+    const actual = 81;
 
     expect(expected).toEqual(actual);
   });
